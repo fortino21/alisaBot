@@ -20,7 +20,7 @@ async def on_ready():
 
 @bot.command(name='search',help='Search illustration at pixiv, command : &search <keyword> <number of results>.')
 async def search(ctx, keyword, threshold):
-    pixivSearchResult = pixivClient.search_illustrations(keyword, search_target= SearchTarget.TITLE_AND_CAPTION , sort=None, duration=None, offset=None)
+    pixivSearchResult = pixivClient.search_illustrations(keyword, search_target= SearchTarget.TITLE_AND_CAPTION , sort= Sort.DATE_DESC, duration=None, offset=None)
     illustData = pixivSearchResult['illustrations']
     if len(illustData) == 0 :
         await ctx.send("No result for "+keyword)
