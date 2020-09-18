@@ -1,11 +1,11 @@
 import os
-
+import tzlocal
 import discord
 import random
 from dotenv import load_dotenv
 from pixivapi import Client,SearchTarget,Sort
 from discord.ext import commands
-
+print(tzlocal.get_localzone().zone)
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
@@ -13,7 +13,6 @@ bot = commands.Bot(command_prefix='&')
 
 pixivClient = Client()
 pixivClient.login(os.getenv("PIXIV_EMAIL"), os.getenv("PIXIV_PASSWORD"))
-print("TEST ", Sort.DATE_DESC )
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
