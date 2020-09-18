@@ -8,7 +8,7 @@ from discord.ext import commands
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-
+print("TEST "+TOKEN)
 client = discord.Client()
 bot = commands.Bot(command_prefix='&')
 
